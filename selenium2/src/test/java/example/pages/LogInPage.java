@@ -16,11 +16,28 @@ public class LogInPage {
 
     private String email = "owner@gmail.com";
     private String password = "123";
+    private WebElement getUsernameField() {
+        return driver.findElement(By.name("email"));
+    }
+
+    private WebElement getPasswordField() {
+        return driver.findElement(By.name("password"));
+    }
+
+    private WebElement getlogInButton() {
+        return driver.findElement(By.xpath("//button[text()='Login']"));
+    }
 
     public LogInPage(WebDriver driver, String email, String password){
         this.driver = driver;
         this.email = email;
         this.password = password;
         PageFactory.initElements(driver, this);
+    }
+
+    public void LogIn(){
+        getUsernameField().sendKeys(email);
+        getPasswordField().sendKeys(password);
+        getlogInButton().click();
     }
 }

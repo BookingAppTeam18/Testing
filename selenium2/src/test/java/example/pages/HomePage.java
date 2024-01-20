@@ -14,8 +14,9 @@ public class HomePage {
     private static String PAGE_URL="http://localhost:4200";
 
 
-    @FindBy(xpath = "button[text()='LOG IN")
+    @FindBy(xpath = "//button[text()='LOG IN']")
     private WebElement logInButton;
+
     public HomePage(WebDriver driver){
         this.driver=driver;
         driver.get(PAGE_URL);

@@ -1,10 +1,8 @@
 package example.tests;
 
 import example.pages.HomePage;
-import org.testng.Assert;
+import example.pages.LogInPage;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertTrue;
 
 public class Student1Tests extends TestBase {
 
@@ -16,5 +14,10 @@ public class Student1Tests extends TestBase {
         //Create object of HomePage Class
         HomePage home = new HomePage(driver);
         home.clickOnLogIn();
+
+        LogInPage logInPage = new LogInPage(driver,EMAIL,PASSWORD);
+        logInPage.LogIn();
+        Thread.sleep(5000);
+
     }
 }
