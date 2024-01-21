@@ -11,15 +11,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage {
     private WebDriver driver;
 
-    private static String PAGE_URL="http://localhost:4200";
 
 
     @FindBy(xpath = "//button[text()='LOG IN']")
     private WebElement logInButton;
 
+    @FindBy(css = "button.location-icon")
+    private WebElement ownerAccommodations;
+
     public HomePage(WebDriver driver){
         this.driver=driver;
-        driver.get(PAGE_URL);
 
         PageFactory.initElements(driver, this);
     }
@@ -27,5 +28,11 @@ public class HomePage {
     public void clickOnLogIn(){
         (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.elementToBeClickable(logInButton)).click();
+    }
+
+    public void clickOnOwnerAccommodations(){
+        (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(ownerAccommodations)).click();
+
     }
 }
