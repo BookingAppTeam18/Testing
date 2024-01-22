@@ -6,7 +6,7 @@ import example.pages.LogInPage;
 import example.pages.ReservationTestPages.OwnerReservationsPage;
 import org.testng.annotations.Test;
 
-public class Student2OwnerTests extends TestBase {
+public class Student2Tests extends TestBase {
 
     static final String EMAIL = "owner@gmail.com";
     static final String PASSWORD = "123";
@@ -15,7 +15,7 @@ public class Student2OwnerTests extends TestBase {
 
 
     @Test
-    public void testAvailability() throws InterruptedException {
+    public void testOwnerDenyReservation() throws InterruptedException {
         driver.get(PAGE_URL);
         //Create object of HomePage Class
         HomePage home = new HomePage(driver);
@@ -33,17 +33,8 @@ public class Student2OwnerTests extends TestBase {
 
         OwnerReservationsPage ownerReservationsPage = new OwnerReservationsPage(driver);
 
-//        WebDriverWait wait = new WebDriverWait(driver, 10);
-        ownerReservationsPage.clickDenyButton();
-
-
-
-
-
-
-
-//        Thread.sleep(5000);
-
+//        ownerReservationsPage.clickDenyButton();
+        ownerReservationsPage.clickDenyButtonForFirstRow();
 
     }
 

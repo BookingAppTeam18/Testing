@@ -57,12 +57,12 @@ public class OwnerAccommodationsPage {
                 wait.until(ExpectedConditions.visibilityOf(reservationRequestsButton));
                 reservationRequestsButton.click();
 
-                System.out.println("Kliknuto na dugme 'Reservation Requests' za prvi accommodation.");
+                System.out.println("Click on 'Reservation Requests' button for first accommodation.");
             } else {
-                System.out.println("Dugme 'Reservation Requests' nije pronađeno za prvi accommodation.");
+                System.out.println("Button 'Reservation Requests' not found for first accommodation.");
             }
         } else {
-            System.out.println("Prvi accommodation nije pronađen.");
+            System.out.println("First accommodation not found.");
         }
     }
 }
