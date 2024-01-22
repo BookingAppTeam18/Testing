@@ -19,6 +19,9 @@ public class HomePage {
     @FindBy(css = "button.location-icon")
     private WebElement ownerAccommodations;
 
+    @FindBy(css = "mat-form-field.search-input input")
+    private WebElement searchInput;
+
     public HomePage(WebDriver driver){
         this.driver=driver;
 
@@ -34,5 +37,10 @@ public class HomePage {
         (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.elementToBeClickable(ownerAccommodations)).click();
 
+    }
+
+    public void performSearch() {
+        searchInput.click();
+        searchInput.sendKeys("Da");
     }
 }
