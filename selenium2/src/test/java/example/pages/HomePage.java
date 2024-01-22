@@ -19,6 +19,9 @@ public class HomePage {
     @FindBy(css = "button.location-icon")
     private WebElement ownerAccommodations;
 
+    @FindBy(xpath="//button[text()='Reservations']")
+    private WebElement reservationsButton;
+
     public HomePage(WebDriver driver){
         this.driver=driver;
 
@@ -35,4 +38,12 @@ public class HomePage {
                 .until(ExpectedConditions.elementToBeClickable(ownerAccommodations)).click();
 
     }
+
+    public void clickOnReservations(){
+        (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(reservationsButton)).click();
+
+    }
+
+
 }
