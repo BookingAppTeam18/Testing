@@ -49,6 +49,8 @@ public class HomePage {
     @FindBy(id = "cards")
     private WebElement cardsContainer;
 
+    @FindBy(xpath="//button[text()='Reservations']")
+    private WebElement reservationsButton;
 
 
     public HomePage(WebDriver driver){
@@ -207,5 +209,13 @@ public class HomePage {
     public WebElement cardsVisible(){
         return cardsContainer;
     }
+
+    public void clickOnReservations(){
+        (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(reservationsButton)).click();
+
+    }
+
+
 
 }
