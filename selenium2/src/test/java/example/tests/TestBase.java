@@ -14,8 +14,8 @@ public class TestBase {
     @BeforeSuite
     public void initializeWebDriver() {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-//        driver = new ChromeDriver();
-        driver = new SafariDriver();
+        driver = new ChromeDriver();
+//        driver = new SafariDriver();
 
         driver.manage().window().maximize();
 
