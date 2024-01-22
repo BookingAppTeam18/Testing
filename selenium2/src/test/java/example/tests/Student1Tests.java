@@ -85,8 +85,8 @@ public class Student1Tests extends TestBase {
         WebElement firstRow = driver.findElement(By.xpath("//table[@mat-table]/tbody/tr[1]"));
 
 // Izdvoj podatke iz prvog reda
-        String startDate = firstRow.findElement(By.cssSelector("td.mat-column-Start-Date")).getText();
-        String endDate = firstRow.findElement(By.cssSelector("td.mat-column-End-Date")).getText();
+        String startDate = firstRow.findElement(By.cssSelector("td.mat-column-Start-Date")).getText().trim();
+        String endDate = firstRow.findElement(By.cssSelector("td.mat-column-End-Date")).getText().trim();
         String priceCellText = firstRow.findElement(By.cssSelector("td.mat-column-Price")).getText();
 
 

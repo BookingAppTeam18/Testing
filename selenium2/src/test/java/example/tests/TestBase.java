@@ -2,6 +2,7 @@ package example.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -14,6 +15,7 @@ public class TestBase {
     public void initializeWebDriver() {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
+//        driver = new SafariDriver();
 
         driver.manage().window().maximize();
 
